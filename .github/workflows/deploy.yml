@@ -27,7 +27,7 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm test
-      - nsme: Build project
+      - name: Build project
         run: npm run build
       - name: Deploy
         run: echo "Deploying ..."
