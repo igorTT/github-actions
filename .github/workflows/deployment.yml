@@ -13,7 +13,7 @@ jobs:
       MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       MONGO_DB_PORT: ${{ secrets.MONGO_DB_PORT }}
-      PORT: ${{ secrets.PORT }}
+      PORT: 8080
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
