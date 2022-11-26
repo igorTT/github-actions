@@ -12,7 +12,7 @@ const dbPort = process.env.MONGODB_PORT;
 const uri = `mongodb://${dbUser}:${dbPassword}@${clusterAddress}:${dbPort}/${dbName}`;
 const client = new MongoClient(uri);
 
-console.log('Trying to connect to db', uri);
+console.log('Trying to connect to db');
 
 try {
   await client.connect();
