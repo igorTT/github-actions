@@ -12,7 +12,7 @@ jobs:
       MONGODB_CLUSTER_ADDRESS: ${{ secrets.MONGODB_CLUSTER_ADDRESS }}
       MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
-      MONGO_DB_PORT: ${{ secrets.MONGO_DB_PORT }}
+      MONGODB_PORT: ${{ secrets.MONGODB_PORT }}
       PORT: 8080
     runs-on: ubuntu-latest
     steps:
