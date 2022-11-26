@@ -14,7 +14,7 @@ jobs:
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       MONGODB_PORT: ${{ secrets.MONGODB_PORT }}
       PORT: 8080
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Get Code
         uses: actions/checkout@v3
@@ -34,7 +34,7 @@ jobs:
           echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
   deploy:
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Output information
         run: |
