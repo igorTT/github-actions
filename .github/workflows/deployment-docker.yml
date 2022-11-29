@@ -16,7 +16,7 @@ jobs:
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       MONGODB_PORT: ${{ secrets.MONGODB_PORT }}
       PORT: 8080
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container: 
       image: node:16
     steps:
