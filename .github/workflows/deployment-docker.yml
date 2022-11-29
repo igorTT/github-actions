@@ -1,11 +1,12 @@
 name: Deployment
 on:
-  workflow_dispatch:
+  push:
     branches:
       - main
       - dev
 env:
   MONGODB_DB_NAME: test
+  CACHE_KEY: node-deps
 jobs:
   test:
     environment: testing
@@ -16,6 +17,8 @@ jobs:
       MONGODB_PORT: ${{ secrets.MONGODB_PORT }}
       PORT: 8080
     runs-on: self-hosted
+    container: 
+      image: node:16
     steps:
       - name: Get Code
         uses: actions/checkout@v3
@@ -23,7 +26,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.CACHE_KEY }}-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: npm ci
       - name: Run server
